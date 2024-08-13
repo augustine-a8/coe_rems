@@ -239,6 +239,7 @@ export default function Home() {
                 value={selectedUserCategory}
                 options={userCategoryOptions}
                 label="User Category"
+                placeholder="Select User Category"
               />
               <label htmlFor="">Session</label>
               <Dropdown
@@ -248,6 +249,7 @@ export default function Home() {
                 value={selectedSession}
                 options={sessionOptions}
                 label="Session"
+                placeholder="Select Session"
               />
 
               <label htmlFor="">Date</label>

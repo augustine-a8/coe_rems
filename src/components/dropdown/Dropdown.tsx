@@ -7,9 +7,10 @@ type DropdownProps = {
   value: string;
   options: string[];
   label?: string;
+  placeholder?: string;
 };
 
-export default function Dropdown({ onSelect, value, options }: DropdownProps) {
+export default function Dropdown({ onSelect, value, options, placeholder }: DropdownProps) {
   const [showDropdown, setShowDropdown] = useState<boolean>(false);
 
   const toggleDropdown = () => {
@@ -19,7 +20,7 @@ export default function Dropdown({ onSelect, value, options }: DropdownProps) {
   return (
     <div className="dropdown">
       <div className="dropdown-value" onClick={toggleDropdown}>
-        <p>{value === "default" ? "Select user category" : value}</p>
+        <p>{value === "default" ? placeholder : value}</p>
         <FontAwesomeIcon icon={showDropdown ? faChevronUp : faChevronDown} />
       </div>
       {showDropdown && (
