@@ -14,9 +14,10 @@ export default function ApolloWrapper({
   children: React.JSX.Element;
 }) {
   const { token } = useAuth();
+  const apiUrl = import.meta.env.VITE_API_URL;
 
   const httpLink = createHttpLink({
-    uri: "https://coe-centralized-system-apii.herokuapp.com/graphql",
+    uri: apiUrl,
   });
 
   const authLink = setContext((_, { headers }) => {
