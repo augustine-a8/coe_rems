@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { faWallet } from "@fortawesome/free-solid-svg-icons";
 
-import IconButton from "../icon-button/IconButton";
 import "./header.style.css";
 import PaymentConfig from "../payment-config/PaymentConfig";
 import Avatar from "../avatar/Avatar";
