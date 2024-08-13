@@ -1,0 +1,11 @@
+.avatar__container {
+  background-color: #0466c8;
+  padding: 0.45rem 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.avatar__text {
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.9rem;
+}

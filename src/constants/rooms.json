@@ -1,0 +1,16 @@
+{
+  "NEB": ["NEB-FF1", "NEB-FF2", "NEB-GF", "NEB-SF", "NEB-TF"],
+  "PB": [
+    "PB001",
+    "PB201",
+    "PB214",
+    "PB212",
+    "PB020",
+    "PB208",
+    "PB012",
+    "PB008",
+    "PB014"
+  ],
+  "BK": ["LT", "304", "RMA", "N2", "N1", "VSLA", "RMB"],
+  "EO": ["ECR", "VCR", "A110", "NAF1", "EA"]
+}

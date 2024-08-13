@@ -1,0 +1,18 @@
+.tag {
+  border: 1px solid var(--clr-border-gray);
+  border-radius: 0.5rem;
+  height: 85%;
+  padding-inline: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag:hover {
+  cursor: pointer;
+}
+
+.tag > p {
+  font-size: 0.85rem;
+  font-weight: 500;
+}

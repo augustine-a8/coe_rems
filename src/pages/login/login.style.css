@@ -1,0 +1,50 @@
+.login-page {
+  width: 35%;
+  padding: 1rem 1.5rem;
+  margin-inline: auto;
+  margin-top: 15rem;
+  border-radius: 0.75rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.login-page__heading {
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 1.5rem;
+}
+
+.form-control > input {
+  width: 100%;
+}
+
+.login-btn__container {
+  width: 50%;
+  margin-inline: auto;
+  margin-top: 2.5rem;
+}
+
+.login-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-green);
+  color: white;
+  height: 2.25rem;
+  border-radius: 0.5em;
+}
+
+.login-error {
+  border: 1px solid var(--clr-red);
+  border-radius: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5em;
+  height: 2.5em;
+}
+
+.login-error > p {
+  color: var(--clr-red);
+  font-weight: 500;
+}

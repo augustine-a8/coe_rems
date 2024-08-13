@@ -1,0 +1,33 @@
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  border-bottom: 1px solid var(--clr-border-gray);
+  background: #fff;
+  height: 4.5rem;
+  padding-inline: 1rem;
+}
+
+.header__container h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: inherit;
+}
+
+/* .header__container > div:last-of-type {
+  display: flex;
+  gap: 1rem;
+} */
+
+.header__avatar-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header__avatar-info > h4,
+.header__avatar-info > p {
+  text-align: right;
+}

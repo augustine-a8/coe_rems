@@ -1,0 +1,14 @@
+.btn__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5em 1em;
+  border-radius: 0.35em;
+  background-color: #e7e7e7;
+}
+
+.btn__title {
+  text-transform: capitalize;
+  font-size: 0.9rem;
+}

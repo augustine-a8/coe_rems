@@ -1,0 +1,7 @@
+.loading-container > .error-msg {
+  font-size: 1.15em;
+  text-transform: capitalize;
+  font-weight: 500;
+  border: 0;
+  background-color: transparent;
+}
