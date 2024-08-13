@@ -163,6 +163,19 @@ export default function Home() {
       }
     });
 
+    const signaturesForEachUser: {[key: string]: number} = {};
+
+    allSignatures.forEach(signature => {
+      const {user} = signature;
+      if (signaturesForEachUser[user]) {
+        signaturesForEachUser[user] += 1;
+      } else {
+        signaturesForEachUser[user] = 1
+      }
+    });
+
+    // console.log(Object.entries(signaturesForEachUser))
+
     const filename = "signature-report";
     const fileExtension = ".xlsx";
     const fileType =
@@ -175,6 +188,10 @@ export default function Home() {
     allSignatures.forEach(signature => {
       ws.addRow(Object.values(signature))
     });
+
+    const ws2 = workbook.addWorksheet("Sheet2");
+    ws2.addRow(["USER", "SIGNATURE COUNT"]);
+    ws2.addRows(Object.entries(signaturesForEachUser))
 
     const buffer = await workbook.xlsx.writeBuffer();
     const data = new Blob([buffer], { type: fileType });
