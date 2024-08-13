@@ -256,8 +256,8 @@ th {
   grid-template-columns: repeat(2, 1fr);
 }
 
-.center__grid > div {
-}
+/* .center__grid > div {
+} */
 
 .search-box {
   border: 1px solid var(--clr-border-gray);
@@ -312,6 +312,12 @@ th {
   border: 0;
 }
 
+.export-btn-header {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
 .export-btn {
   display: flex;
   align-items: center;
@@ -321,6 +327,10 @@ th {
   height: 2.25rem;
   padding-inline: 1.5rem;
   border-radius: 0.5em;
+}
+
+.export-btn:last-of-type {
+  background-color: var(--clr-green);
 }
 
 .signature-body {

@@ -4,9 +4,12 @@ import {
   faFileExport,
   faFilter,
   faSearch,
+  faTable,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useQuery } from "@apollo/client";
+import Excel from 'exceljs';
+import FileSaver from "file-saver";
 
 import "./home.style.css";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons/faChevronRight";
@@ -146,6 +149,38 @@ export default function Home() {
     setCurrentPage((prev) => (prev > 1 ? prev - 1 : prev));
   };
 
+  const exportToXl = async () => {
+    
+    const allSignatures = filteredSignatures.map((item) => {
+      const {room, user, session, signedAt} = item;
+
+      return {
+        room: room.name,
+        user: user.name,
+        category: user.category,
+        session,
+        date: new Date(signedAt).toDateString(),
+      }
+    });
+
+    const filename = "signature-report";
+    const fileExtension = ".xlsx";
+    const fileType =
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8";
+
+    
+    const workbook = new Excel.Workbook();
+    const ws = workbook.addWorksheet("Sheet1");
+    ws.addRow(["ROOM", "USER", "CATEGORY", "SESSION", "DATE"])
+    allSignatures.forEach(signature => {
+      ws.addRow(Object.values(signature))
+    });
+
+    const buffer = await workbook.xlsx.writeBuffer();
+    const data = new Blob([buffer], { type: fileType });
+    FileSaver.saveAs(data, filename + fileExtension);
+  }
+
   return (
     <>
       <div className="signature-header">
@@ -267,10 +302,14 @@ export default function Home() {
             </div>
           )}
         </div>
-        <div>
+        <div className="export-btn-header">
           <a href="#" className="export-btn">
             <FontAwesomeIcon icon={faFileExport} />
             <p>Export Pdf</p>
+          </a>
+          <a href="#" className="export-btn" onClick={exportToXl}>
+            <FontAwesomeIcon icon={faTable} />
+            <p>Export XL</p>
           </a>
         </div>
       </div>
