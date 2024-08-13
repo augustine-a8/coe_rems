@@ -122,6 +122,16 @@ export default function Home() {
     );
   }
 
+  if (selectedDate != "") {
+    const formattedDate = new Date(selectedDate).toDateString()
+    filteredSignatures = filteredSignatures.filter((signature) => {
+      const {signedAt} = signature;
+      const formattedSignedAt = new Date(signedAt).toDateString();
+
+      return formattedSignedAt === formattedDate
+    })
+  }
+
   const resetFilter = () => {
     setSelectedSession("default");
     setSelectedCenter("");
@@ -173,8 +183,6 @@ export default function Home() {
         signaturesForEachUser[user] = 1
       }
     });
-
-    // console.log(Object.entries(signaturesForEachUser))
 
     const filename = "signature-report";
     const fileExtension = ".xlsx";
