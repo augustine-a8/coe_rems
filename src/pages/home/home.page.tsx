@@ -136,6 +136,7 @@ export default function Home() {
     setSelectedSession("default");
     setSelectedCenter("");
     setSelectedUserCategory("default");
+    setSelectedDate("");
     setShowFilter((prev) => !prev);
   };
 
